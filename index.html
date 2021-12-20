@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
+    <!-- Breadcrumb, Slider, Footer -->
+    <!-- Header -->
     <div id="header">
         <div class="navbar-left">
             <i class="bx bx-menu"></i> 
@@ -19,190 +21,195 @@
             <i class='bx bxs-user-circle'></i>
         </div>
     </div>
-    <div  id="tabs">
-        <div class="sidebar">
-            <div class="logo-details">
-                <i class='bx bx-body'></i>
-                <span class="logo_name">Hệ Thống Điều Tra Dân Số</span>
-            </div>
-            <ul class="nav-links">
-             <li>
-                <div class="icon-link">
-                    <a href="#">
-                        <i class="bx bx-collection"></i>
-                        <span class="link_name">Quản lý thông tin</span>
-                    </a>
-                    <i class="bx bxs-chevron-down arrow"></i>
-                </div>
-                <ul class="sub-menu tab">
-                        <li><a class="link_name"  href="#">Quản lý thông tin</a></li>
-                        <li ><a class="tablinks" id="defaultOpen" onclick="opensidebar(event, 'taomatp')" href="#" >Tạo mã</a></li> 
-                        <li ><a class="tablinks"  onclick="opensidebar(event, 'taotaikhoan')" href="#" >Tạo tài khoản</a></li>
-                        <li ><a class="tablinks" onclick="opensidebar(event, 'danhsachtp') " href="#" >Danh Sách TP</a></li>     
-                </ul>
-             </li> 
-             <li>
-                <div class="icon-link">
-                    <a href="#">
-                        <i class="bx bx-line-chart"></i>
-                        <span class="link_name">Phân tích</span>
-                    </a>
-                    <i class="bx bxs-chevron-down arrow"></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a href="#" class="link_name">Phân tích</a></li>
-                    <li><a class="tablinks" >Danh sách dân số</a></li>
-                    <li><a class="tablinks" >Phân tích dân số</a></li>
-                    <li><a class="tablinks" >Thông tin</a></li>
-                </ul>
-             </li>
-             <li>
-                <div class="icon-link">
-                    <a href="#">
-                        <i class="bx bx-search" ></i>
-                        <span class="link_name">Tìm kiếm</span>
-                     </a>
-                     <ul class="sub-menu">
-                        <li><a href="#" class="link_name">Tìm kiếm</a></li>
-                    </ul> 
-                </div>
-             </li>
-            <li>
-                <div class="icon-link">
-                    <a href="#">
-                        <i class="bx bx-shield-alt-2"></i>
-                        <span class="link_name">Quản lý tài khoản</span>
-                    </a>
-                    <i class="bx bxs-chevron-down arrow"></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a href="#" class="link_name">Quản lý tài khoản</a></li>
-                    <li ><a class="tablinks" onclick="opensidebar(event, 'doimatkhau') "href="#" >Đổi mật khẩu</a></li> 
-                </ul>
-             </li>  
-            </ul>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="logo-details">
+            <i class='bx bx-body'></i>
+            <span class="logo_name">Hệ Thống Điều Tra Dân Số</span>
         </div>
-        <section class="home-section">
-            <div id="taomatp" class="tabcontent">
-                <div id="formcontent">
-                    <div class="container">
-                        <div class="title">TẠO MÃ CHO THÀNH PHỐ</div>
-                        <div class="content">
-                            <form action="#">
-                                <div class="user-details"> 
-                                     <div class="input-group2 reponsive-form">
-                                        <div class="input-details row-group2">
-                                            <span class="details">Thành phố</span>
-                                            <input type="text" placeholder="" required>
-                                        </div>
-                                        <div class="input-details row-group2">
-                                            <span class="details">Mã Thành phố</span>
-                                            <input type="text" placeholder="" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="button">
-                                    <input type="submit" value="Xác Nhận">
-                                </div>
-                            </form>
-                        </div>
-                    </div> 
-                </div>
+        <ul class="nav-links">
+            <li>
+            <div class="icon-link">
+                <a href="#">
+                    <i class="bx bx-collection"></i>
+                    <span class="link_name">Quản lý thông tin</span>
+                </a>
+                <i class="bx bxs-chevron-down arrow"></i>
             </div>
-            <div id="taotaikhoan" class="tabcontent">
-                <div id="formcontent">
-                    <div class="container">
-                        <div class="title">TẠO TÀI KHOẢN</div>
-                        <div class="content">
-                            <form action="#">
-                                <div class="user-details">
-                                      
-                                     <div class="input-group2  reponsive-form">
-                                        <div class="input-details row-group2">
-                                            <span class="details">Tài khoản mới</span>
-                                            <input type="text" placeholder="" required>
-                                        </div>
-                                        <div class="input-details row-group2">
-                                            <span class="details">Mât khẩu</span>
-                                            <input type="password" placeholder="" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="button">
-                                    <input type="submit" value="Xác Nhận">
-                                </div>
-                            </form>
-                        </div>
-                    </div> 
-                </div>
+            <ul class="sub-menu tab">
+                    <li><a class="link_name"  href="#">Quản lý thông tin</a></li>
+                    <li ><a class="tablinks" id="defaultOpen" onclick="opensidebar(event, 'taomatp')" href="#" >Tạo mã</a></li> 
+                    <li ><a class="tablinks"  onclick="opensidebar(event, 'taotaikhoan')" href="#" >Tạo tài khoản</a></li>
+                    <li ><a class="tablinks" onclick="opensidebar(event, 'danhsachtp') " href="#" >Danh Sách TP</a></li>     
+            </ul>
+            </li> 
+            <li>
+            <div class="icon-link">
+                <a href="#">
+                    <i class="bx bx-line-chart"></i>
+                    <span class="link_name">Phân tích</span>
+                </a>
+                <i class="bx bxs-chevron-down arrow"></i>
             </div>
-            <div id="danhsachtp" class="tabcontent">
-                <div id="formcontent">
-                    <div class="container">
-                        <div class="content">
-                            <form action="#">
-                                <div class="user-details">     
-                                        <div class="listcity ">
-                                            <span class="details listcity-name">Danh sách TP</span>
-                                            <div class="button-listcity">
-                                                <input class="button-listcity-box" type="text" placeholder="Tìm kiếm TP" required>
-                                                <input class="button-listcity-search" type="submit" value="Xác Nhận">
-                                            </div>
-                                        </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div> 
-                </div>
+            <ul class="sub-menu">
+                <li><a href="#" class="link_name">Phân tích</a></li>
+                <li><a class="tablinks" >Danh sách dân số</a></li>
+                <li><a class="tablinks" >Phân tích dân số</a></li>
+                <li><a class="tablinks" >Thông tin</a></li>
+            </ul>
+            </li>
+            <li>
+            <div class="icon-link">
+                <a href="#">
+                    <i class="bx bx-search" ></i>
+                    <span class="link_name">Tìm kiếm</span>
+                    </a>
+                    <ul class="sub-menu">
+                    <li><a href="#" class="link_name">Tìm kiếm</a></li>
+                </ul> 
             </div>
-            <div id="doimatkhau" class="tabcontent">
-                <div id="formcontent">
-                    <div class="container">
-                        <div class="title">Đổi mật khẩu</div>
-                        <div class="content">
-                            <form action="#">
-                                <div class="user-details"> 
-                                     <div class="input-group">
-                                        <div class="input-details row-group2">
-                                            <span class="details">Mật khẩu cũ</span>
-                                            <input type="password" placeholder="" required>
-                                        </div>
-                                        <div class="input-details row-group2">
-                                            <span class="details">Mât khẩu mới</span>
-                                            <input type="password" placeholder="" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="button">
-                                    <input type="submit" value="Xác Nhận">
-                                </div>
-                            </form>
-                        </div>
-                    </div> 
-                </div>
+            </li>
+        <li>
+            <div class="icon-link">
+                <a href="#">
+                    <i class="bx bx-shield-alt-2"></i>
+                    <span class="link_name">Quản lý tài khoản</span>
+                </a>
+                <i class="bx bxs-chevron-down arrow"></i>
             </div>
-            
-        </section>
+            <ul class="sub-menu">
+                <li><a href="#" class="link_name">Quản lý tài khoản</a></li>
+                <li ><a class="tablinks" onclick="opensidebar(event, 'doimatkhau') "href="#" >Đổi mật khẩu</a></li> 
+            </ul>
+            </li>  
+        </ul>
     </div>
+
+    <!-- Container -->
+    <div class="home-section">
+        <!-- Create city code -->
+        <div id="taomatp" class="tabcontent">
+            <div id="formcontent">
+                <div class="container">
+                    <div class="title">TẠO MÃ CHO THÀNH PHỐ</div>
+                    <div class="content">
+                        <form action="#">
+                            <div class="user-details"> 
+                                    <div class="input-group2 reponsive-form">
+                                    <div class="input-details row-group2">
+                                        <span class="details">Thành phố</span>
+                                        <input type="text" placeholder="" required>
+                                    </div>
+                                    <div class="input-details row-group2">
+                                        <span class="details">Mã Thành phố</span>
+                                        <input type="text" placeholder="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="Xác Nhận">
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- Create account -->
+        <div id="taotaikhoan" class="tabcontent">
+            <div id="formcontent">
+                <div class="container">
+                    <div class="title">TẠO TÀI KHOẢN</div>
+                    <div class="content">
+                        <form action="#">
+                            <div class="user-details">
+                                    <div class="input-group2  reponsive-form">
+                                    <div class="input-details row-group2">
+                                        <span class="details">Tài khoản mới</span>
+                                        <input type="text" placeholder="" required>
+                                    </div>
+                                    <div class="input-details row-group2">
+                                        <span class="details">Mât khẩu</span>
+                                        <input type="password" placeholder="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="Xác Nhận">
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- List City -->
+        <div id="danhsachtp" class="tabcontent">
+            <div id="formcontent">
+                <div class="container">
+                    <div class="content">
+                        <form action="#">
+                            <div class="user-details">     
+                                <div class="listcity">
+                                    <span class="details listcity-name">Danh sách TP</span>
+                                    <div class="button-listcity">
+                                        <input class="button-listcity-box" type="text" placeholder="Tìm kiếm TP" required>
+                                        <input class="button-listcity-search" type="submit" value="Xác Nhận">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- Change password -->
+        <div id="doimatkhau" class="tabcontent">
+            <div id="formcontent">
+                <div class="container">
+                    <div class="title">Đổi mật khẩu</div>
+                    <div class="content">
+                        <form action="#">
+                            <div class="user-details"> 
+                                <div class="input-group">
+                                    <div class="input-details row-group2">
+                                        <span class="details">Mật khẩu cũ</span>
+                                        <input type="password" placeholder="" required>
+                                    </div>
+                                    <div class="input-details row-group2">
+                                        <span class="details">Mât khẩu mới</span>
+                                        <input type="password" placeholder="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="Xác Nhận">
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
     <script>
-        //  jquery for bx-menu
+        //  Jquery for bx-menu, icon-link
         $(document).ready(function(){
             $('.bx-menu').click(function(){
-                $('.sidebar').toggleClass('close');
+                $('#sidebar').toggleClass('close');
                 $('#header').toggleClass('close');
+                Breadcrumb
             });
 
-        //  jquery for toggle sub menus
             $('.icon-link').click(function(){
                 $(this).next('.sub-menu').slideToggle();
                 $(this).find('.arrow').toggleClass('rotate');
             });
         });
 
-        //  change color when click
+        //  Change color when click
         let select = document.querySelector(".select");
         let tablinks = document.querySelectorAll(".tablinks");
         for (let i = 0; i < tablinks.length; i++) {
@@ -217,6 +224,7 @@
             });
         }
 
+        // Navigation 
         function opensidebar(evt, cityName) {
             // Declare all variables
             var i, tabcontent, tablinks;
@@ -239,6 +247,6 @@
         }   
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
-        </script>
+    </script>
 </body>
 </html>
