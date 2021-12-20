@@ -102,11 +102,9 @@ form .input-details span.details {
 form .button input:hover{
     background: linear-gradient(-135deg, #71b7e6, var(--primary-color));
 }
-@media(max-width:700px) {
+@media (max-width: 739px){
      .reponsive-form {
-        flex-direction: column;
-       
-        
+        flex-direction: column;    
     }
     .row-group2, .row-group3 {
         width: 100%;

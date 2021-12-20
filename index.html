@@ -51,19 +51,21 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a href="#" class="link_name">Phân tích</a></li>
-                    <li><a href="tablinks" onclick="opensidebar(event, 'taomatp')" href="#">Danh sách dân số</a></li>
-                    <li><a href="tablinks" onclick="opensidebar(event, 'taomatp')" href="#">Phân tích dân số</a></li>
-                    <li><a href="tablinks" onclick="opensidebar(event, 'taomatp')" href="#">Thông tin</a></li>
+                    <li><a class="tablinks" >Danh sách dân số</a></li>
+                    <li><a class="tablinks" >Phân tích dân số</a></li>
+                    <li><a class="tablinks" >Thông tin</a></li>
                 </ul>
              </li>
              <li>
-                 <a href="#">
-                    <i class="bx bx-search" ></i>
-                    <span class="link_name">Tìm kiếm</span>
-                 </a>
-                 <ul class="sub-menu">
-                    <li><a href="#" class="link_name">Tìm kiếm</a></li>
-                </ul> 
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="bx bx-search" ></i>
+                        <span class="link_name">Tìm kiếm</span>
+                     </a>
+                     <ul class="sub-menu">
+                        <li><a href="#" class="link_name">Tìm kiếm</a></li>
+                    </ul> 
+                </div>
              </li>
             <li>
                 <div class="icon-link">
@@ -186,21 +188,34 @@
         </section>
     </div>
     <script>
-        let header = document.querySelector("#header");
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        sidebarBtn.addEventListener("click",() => {
-            sidebar.classList.toggle("close");
-            header.classList.toggle("close");
-        });
-
+        //  jquery for bx-menu
         $(document).ready(function(){
-          //jquery for toggle sub menus
+            $('.bx-menu').click(function(){
+                $('.sidebar').toggleClass('close');
+                $('#header').toggleClass('close');
+            });
+
+        //  jquery for toggle sub menus
             $('.icon-link').click(function(){
                 $(this).next('.sub-menu').slideToggle();
                 $(this).find('.arrow').toggleClass('rotate');
             });
         });
+
+        //  change color when click
+        let select = document.querySelector(".select");
+        let tablinks = document.querySelectorAll(".tablinks");
+        for (let i = 0; i < tablinks.length; i++) {
+            tablinks[i].addEventListener("click", () => {
+                for(let j = 0; j < tablinks.length; j++) {
+                    if (i == j) {
+                        tablinks[i].classList.add("colorTab");
+                    } else {
+                        tablinks[j].classList.remove("colorTab");
+                    }
+                }
+            });
+        }
 
         function opensidebar(evt, cityName) {
             // Declare all variables
