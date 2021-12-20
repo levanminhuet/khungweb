@@ -28,7 +28,7 @@
     height: 3px;
     width: 60px;
     border-radius: 5px;
-    background: linear-gradient(135deg, #71b7e6,#9b59b6);
+    background: linear-gradient(135deg, #71b7e6, var(--primary-color));
 }
 
 .input-group2, .input-group3 {
@@ -97,16 +97,14 @@ form .input-details span.details {
     letter-spacing: 1px;
     cursor: pointer;
     transform: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6,#9b59b6);
+    background: linear-gradient(135deg, #71b7e6, var(--primary-color));
 }
 form .button input:hover{
-    background: linear-gradient(-135deg, #71b7e6,#9b59b6);
+    background: linear-gradient(-135deg, #71b7e6, var(--primary-color));
 }
-@media(max-width:700px) {
+@media (max-width: 739px){
      .reponsive-form {
-        flex-direction: column;
-       
-        
+        flex-direction: column;    
     }
     .row-group2, .row-group3 {
         width: 100%;
