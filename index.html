@@ -6,52 +6,448 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style-form.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+
 </head>
 <body>
-    <div id="danso">
-        <div class="main">
-            <form action="" method="POST" class="form" id="form-2">
-              <h3 class="heading">HỆ THỐNG ĐIỀU TRA DÂN SỐ</h3>
-              <div class="spacer"></div>
-      
-              <div class="form-group">
-                <label for="email" class="form-label">Tài khoản</label>
-                <input id="email" name="email" type="text" placeholder="" class="form-control">
-                <span class="form-message"></span>
-              </div>
-      
-              <div class="form-group">
-                <label for="password" class="form-label">Mật khẩu</label>
-                <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
-                <span class="form-message"></span>
-              </div>
-      
-              <button class="form-submit">Đăng nhập</button>
-            </form>
-      
-          </div>
+    <div id="header">
+        <div class="navbar-left">
+            <i class="bx bx-menu"></i> 
+        </div>
+        <div class="navbar-right">   
+            <li>
+                <a href="">
+                    <i class='bx bxs-user-circle'></i>
+                </a></lid>
+                
+            </li>
+        </div>
     </div>
-    
-      <script src="./validator.js"></script>
-      <script>
-  
-        document.addEventListener('DOMContentLoaded', function () {
-          
-          Validator({
-            form: '#form-2',
-            formGroupSelector: '.form-group',
-            errorSelector: '.form-message',
-            rules: [
-              Validator.isEmail('#email'),
-              Validator.minLength('#password', 6),
-            ],
-            onSubmit: function (data) {
-              // Call API
-              console.log(data);
-            }
-          });
+    <div class="clear"></div>
+    <div  id="tabs">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bx-body'></i>
+                <span class="logo_name">CitizenV</span>
+            </div>
+            <ul class="nav-links">
+             <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="bx bx-collection"></i>
+                        <span class="link_name">Quản lý thông tin</span>
+                    </a>
+                    <i class="bx bxs-chevron-down arrow"></i>
+                </div>
+                <ul class="sub-menu tab">
+                        <li><a class="link_name"  href="#">Quản lý thông tin</a></li>
+                        <li ><a class="tablinks" id="defaultOpen" onclick="opensidebar(event, 'taomatp')" href="#" >Tạo mã</a></li> 
+                        <li ><a class="tablinks"  onclick="opensidebar(event, 'taotaikhoan')" href="#" >Tạo tài khoản</a></li>
+                        <li ><a class="tablinks" onclick="opensidebar(event, 'danhsachtp') " href="#" >Danh Sách TP</a></li>     
+                </ul>
+             </li> 
+             <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="bx bx-line-chart"></i>
+                        <span class="link_name">Phân tích</span>
+                    </a>
+                    <i class="bx bxs-chevron-down arrow"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="#" class="link_name">Phân tích</a></li>
+                    <li><a class="tablinks" >Danh sách dân số</a></li>
+                    <li ><a class="tablinks"  onclick="opensidebar(event, 'phantichdanso')" href="#" >Phân tích dân số</a></li>
+                    <li><a class="tablinks" >Thông tin</a></li>
+                </ul>
+             </li>
+             <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="bx bx-search" ></i>
+                        <span class="link_name">Tìm kiếm</span>
+                     </a>
+                     <ul class="sub-menu">
+                        <li><a href="#" class="link_name">Tìm kiếm</a></li>
+                    </ul> 
+                </div>
+             </li>
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="bx bx-shield-alt-2"></i>
+                        <span class="link_name">Quản lý tài khoản</span>
+                    </a>
+                    <i class="bx bxs-chevron-down arrow"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="#" class="link_name">Quản lý tài khoản</a></li>
+                    <li ><a class="tablinks" onclick="opensidebar(event, 'doimatkhau') "href="#" >Đổi mật khẩu</a></li> 
+                </ul>
+             </li>  
+            </ul>
+        </div>
+        <section class="home-section">
+            <div id="taomatp" class="tabcontent">
+                <div id="formcontent">
+                    <div class="container">
+                        <div class="title">TẠO MÃ CHO THÀNH PHỐ</div>
+                        <div class="content">
+                            <form action="#">
+                                <div class="user-details"> 
+                                     <div class="input-group2 reponsive-form">
+                                        <div class="input-details row-group2">
+                                            <span class="details">Thành phố</span>
+                                            <input type="text" placeholder="" required>
+                                        </div>
+                                        <div class="input-details row-group2">
+                                            <span class="details">Mã Thành phố</span>
+                                            <input type="text" placeholder="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="button">
+                                    <input type="submit" value="Xác Nhận">
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="taotaikhoan" class="tabcontent">
+                <div id="formcontent">
+                    <div class="container">
+                        <div class="title">TẠO TÀI KHOẢN</div>
+                        <div class="content">
+                            <form action="#">
+                                <div class="user-details">
+                                      
+                                     <div class="input-group2  reponsive-form">
+                                        <div class="input-details row-group2">
+                                            <span class="details">Tài khoản mới</span>
+                                            <input type="text" placeholder="" required>
+                                        </div>
+                                        <div class="input-details row-group2">
+                                            <span class="details">Mât khẩu</span>
+                                            <input type="password" placeholder="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="button">
+                                    <input type="submit" value="Xác Nhận">
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="danhsachtp" class="tabcontent">
+                <div id="formcontent">
+                    <div class="container">
+                        <div class="content">
+                            <form action="#">
+                                <div class="user-details">     
+                                        <div class="listcity ">
+                                            <span class="details listcity-name">Danh sách TP</span>
+                                            <div class="button-listcity">
+                                                <input class="button-listcity-box" type="text" placeholder="Tìm kiếm TP" required>
+                                                <input class="button-listcity-search" type="submit" value="Xác Nhận">
+                                            </div>
+                                        </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="doimatkhau" class="tabcontent">
+                <div id="formcontent">
+                    <div class="container">
+                        <div class="title">Đổi mật khẩu</div>
+                        <div class="content">
+                            <form action="#">
+                                <div class="user-details"> 
+                                     <div class="input-group">
+                                        <div class="input-details row-group2">
+                                            <span class="details">Mật khẩu cũ</span>
+                                            <input type="password" placeholder="" required>
+                                        </div>
+                                        <div class="input-details row-group2">
+                                            <span class="details">Mât khẩu mới</span>
+                                            <input type="password" placeholder="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="button">
+                                    <input type="submit" value="Xác Nhận">
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="phantichdanso" class="tabcontent">
+                <div id="formcontent">
+                    <div class="container">
+                        <div class="title">PHÂN TÍCH DÂN SỐ</div>
+                        <form action="#">
+                            <div class="selectpeople">
+                                <div class="select-country nameselect">
+                                    <p>Toàn quốc</p>
+                                    <select>
+                                        <option>- Chọn toàn quốc -</option>
+                                    </select>
+                                </div>
+                                <div class="select-city nameselect">
+                                    <p>Tỉnh/ TP</p>
+                                    <select>
+                                        <option>- Chọn tỉnh/ TP -</option>
+                                        <option>Danh sách 01</option>
+                                        <option>Danh sách 02</option>
+                                        <option>Danh sách 03</option>
+                                        </select>
+                                </div>
+                                <div class="select-district nameselect">
+                                    <p>Quận/ huyện</p>
+                                    <select>
+                                        <option>- Chọn huyện -</option>
+                                        <option>Danh sách 02</option>
+                                        <option>Danh sách 03</option>
+                                        <option>Danh sách 03</option>
+                                        </select>
+                                </div>
+                                <div class="select-wards nameselect">
+                                    <p>Phường/ Xã</p>
+                                    <select>
+                                        <option>- Chọn xã/ phường -</option>
+                                        <option>Danh sách 02</option>
+                                        <option>Danh sách 03</option>
+                                        <option>Danh sách 03</option>
+                                        </select>
+                                </div>
+                                <div class="select-village nameselect">
+                                    <p>Thôn/ Xóm</p>
+                                    <select>
+                                        <option>- Chọn thôn/ xóm -</option>
+                                        <option>Danh sách 02</option>
+                                        <option>Danh sách 03</option>
+                                        <option>Danh sách 03</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="Xác Nhận">
+                            </div>
+                        </form>
+                        <div class="chartpeople">
+                            <div class="chart-chartbar chart">
+                                <div class="chartbar">
+                                    <canvas id="myChartbar1" width="200" height="200"></canvas>
+                                </div>
+                                <div class="chartbar">
+                                    <canvas id="myChartbar2" width="200" height="200"></canvas>
+                                </div>  
+                            </div>
+                            <div class="chart-chartpie chart">
+                                <div class="chartpie">
+                                    <canvas id="myChartpie" width="200" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+    <script>
+        //  jquery for bx-menu
+        $(document).ready(function(){
+            $('.bx-menu').click(function(){
+                $('.sidebar').toggleClass('close');
+                $('#header').toggleClass('close');
+            });
+
+        //  jquery for toggle sub menus
+            $('.icon-link').click(function(){
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.arrow').toggleClass('rotate');
+            });
         });
-  
-      </script>
+
+        //  change color when click
+        let select = document.querySelector(".select");
+        let tablinks = document.querySelectorAll(".tablinks");
+        for (let i = 0; i < tablinks.length; i++) {
+            tablinks[i].addEventListener("click", () => {
+                for(let j = 0; j < tablinks.length; j++) {
+                    if (i == j) {
+                        tablinks[i].classList.add("colorTab");
+                    } else {
+                        tablinks[j].classList.remove("colorTab");
+                    }
+                }
+            });
+        }
+
+        function opensidebar(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }   
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+
+
+            // chart bar
+            const ctx1 = document.getElementById('myChartbar1');
+const myChart1 = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        scales: {
+            x: {
+                reverse: true,
+                beginAtZero: true
+            }
+        }
+    }
+});
+const ctx2 = document.getElementById('myChartbar2');
+const myChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        
+    }
+});
+
+//char pie
+const ctx = document.getElementById('myChartpie');
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            hoverOffset: 4
+        }]
+    },
+});
+        </script>
 </body>
 </html>
