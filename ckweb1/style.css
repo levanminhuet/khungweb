@@ -529,7 +529,7 @@ table h3 {
 
     .sidebar {
         left: -280px;
-        overflow-y: auto;
+        /* overflow-y: auto; */
         z-index: 1;
     }
 
@@ -537,7 +537,7 @@ table h3 {
         top: 70px;
         left: 0;
         background: #7cb1b7;
-        scroll-behavior: auto;
+        /* scroll-behavior: auto; */
         box-shadow: var(--shadow);
     }
 
@@ -812,19 +812,18 @@ a.active .buttonchart-icon {
     }
 
     .all-buttonchart {
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 739px) {
     .all-buttonchart {
-        grid-template-columns: 100%;
+        grid-template-columns: auto auto;
     }
 }
 
 
 /* list danh sach */
-
 
 .table{
     margin-top: 5px;
@@ -888,13 +887,14 @@ a.active .buttonchart-icon {
 /* button change */
 .table input {
 	display: none;
-  }
+}
 
- .button-change {
+.button-change {
 	 display: flex;
 	 justify-content: center;
- } 
-  label {
+} 
+
+.button-change label {
 	display: block;
 	width: 40px;
 	height: 20px;
@@ -907,9 +907,9 @@ a.active .buttonchart-icon {
 	padding: 0 0 0 1.5px;
 	box-sizing: border-box;
 	transition: .3s ease-in-out;
-  }
+}
   
-  label div{
+.button-change label div{
 	height: 18px;
 	width: 18px;
 	background: #fff;
@@ -918,22 +918,22 @@ a.active .buttonchart-icon {
 	box-shadow: 1px 0 10px rgba(0, 0, 0, .3);
 	transition: .5s cubic-bezier(.58,0,.37,1.28);
 	position: relative;
-  }
+}
   
-  input:checked + label div{
+.button-change input:checked +  label div{
   /*   background-color: #000; */
 	transform: translateX(calc(20px));
 	box-shadow: -2px 0 10px rgba(0, 0, 0, .3);
-  }
+}
   
-  input:checked + label {
+.button-change input:checked + label {
 	background-color: rgb(46,209,88);
-  }
+}
   
-  input:active + label div {
+.button-change input:active + label div {
 	width: 25px
-  }
+}
   
-  input:checked:active + label div {
+.button-change input:checked:active + label div {
 	transform: translateX(calc(40px - 30px));
-  }
+}
