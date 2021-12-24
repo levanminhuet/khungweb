@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="./stylesider.css">
+    </head>
+<body>
+    <div class="page-wrapper">
+        <input type="checkbox" name="" id="menu-toggle">
+
+        <div class="sidebar">
+            <div class="brand">
+                <h3>
+                    <span class="lab la-untappd"></span> 
+                    Pacers 
+                </h3>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-img" style="background-image: url(img/user_logo.jpg)"></div>
+                <div class="profile-info">
+                    <h2>Heather Parker</h2>
+                    <small>Web Architect</small>
+                </div>
+                <div class="profile-action">
+                    <a href="" class="btn btn-white">
+                        <span class="las la-coins"></span>
+                        $2,300
+                    </a>
+                </div>
+                <div class="profile-icons">
+                    <span class="las la-user"></span>
+                    <span class="las la-comment-alt"></span>
+                    <span class="las la-file-invoice"></span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="menu-item">
+                    <a href="#" class="active" onclick="opensidebar(event, 'home')">
+                        <span class="las la-home"></span>
+                        <span>Trang chủ</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="opensidebar(event, 'taotaikhoan')">
+                        <span class="las la-project-diagram"></span>
+                        <span> Tạo Tài khoản</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="opensidebar(event, 'danhsachtp')">
+                        <span class="las la-tasks"></span>
+                        <span>Danh sách TP</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="opensidebar(event, 'taomatp')">
+                        <span class="las la-columns"></span>
+                        <span>Tạo mã TP</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="opensidebar(event, 'phantichdanso')">
+                        <span class="las la-users-cog"></span>
+                        <span>Phân tích</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="opensidebar(event, 'nhapthongtin')">
+                        <span class="las la-user-ninja"></span>
+                        <span>Nhập thông tin</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">
+                        <span class="las la-file-invoice"></span>
+                        <span>Invoices</span> 
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="opensidebar(event, 'doimatkhau')">
+                        <span class="las la-cogs"></span>
+                        <span>Đổi mật khẩu</span> 
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h2>Hello Parker</h2>
+                <p> You are to ......................... 123</p>
+                
+                <a href="" class="btn btn-block btn-white">Get started</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <label for="menu-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+
+                <div class="head-icons">
+                    <span class="las la-search"></span>
+                    <span class="las la-comment-alt"></span>
+                    <span class="las la-bell"></span>
+                    <div class="head-avatar">
+                        <div class="avatar" style="background-image: url(/img/user_logo.jpg)"></div>
+                        <span>John Snow</span>
+                    </div> 
+                </div>
+            </header>
+
+            <main>
+                <div class="page-header">
+                    <h1>Chào mừng bạn</h1>
+                    <small>đã đến Hệ thống điều tra dân số</small>
+                </div>
+
+                <div id="home" class="tabcontent">
+                    <div class="analytics">
+                        <div class="card engage-card">
+                            <div class="card-head">
+                                Engagement
+                            </div>
+                            <div class="card-body">
+                                <div class="slideshow-container">
+
+                                    <div class="mySlides fade">
+                                        <div class="numbertext">1 / 3</div>
+                                        <img src="img/img1.jpg" style="width:100%">
+                                        <div class="text">Caption Text</div>
+                                    </div>
+                            
+                                    <div class="mySlides fade">
+                                        <div class="numbertext">2 / 3</div>
+                                        <img src="img/img2.jpg" style="width:100%">
+                                        <div class="text">Caption Two</div>
+                                    </div>
+                            
+                                    <div class="mySlides fade">
+                                        <div class="numbertext">3 / 3</div>
+                                        <div class="chart-wrapper">
+                                            <div id="chart"></div>
+                                        </div>
+                                        <div class="text">Caption Three</div>
+                                    </div>
+                            
+                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            
+                                </div>
+                                <br>
+                            
+                                <div style="text-align:center">
+                                    <span class="dot" onclick="currentSlide(1)"></span>
+                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <span class="dot" onclick="currentSlide(3)"></span>
+                                </div>
+                                <script src="./siderjs.js"></script>
+                            </div>
+                        </div>
+                        <div class="card  emails-card">
+                            <div class="card-head">
+                                Email sent
+                            </div>
+                            <div class="card-body">
+                                <div id="emailChart"></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="emails-info">
+                                    <div class="email-stat">
+                                        <span class="status bg-danger"></span>
+                                        <span>30 not sent</span>
+                                    </div>
+                                    <div class="email-stat">
+                                        <span class="status bg-warning"></span>
+                                        <span>38 opened</span>
+                                    </div>
+                                    <div class="email-stat">
+                                        <span class="status bg-success"></span>
+                                        <span>68 sucess</span>
+                                    </div>
+                                    <div class="email-stat">
+                                        <span class="status bg-danger"></span>
+                                        <span>SMTP error</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="grid-2">
+                        <div class="card team-progress">
+                            <div class="card-head">
+                                <div class="team-head">
+                                    <div>
+                                        <h3>Team progress</h3>
+                                        <small>890, 344 sales</small>
+                                    </div>
+                                    <select name="" id="">
+                                        <option value="">User</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Author</th>
+                                            <th>Company</th>
+                                            <th>Progress</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="team-info">
+                                                    <div class="team-img">
+                                                        <img src="" alt="">
+                                                    </div>
+                                                    <div class="team-details">
+                                                        <h4>Brad Simmons</h4>
+                                                        <small>HTML, JS, React JS</small>
+    
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="company-info">
+                                                    <h4>Interco</h4>
+                                                    <small>Web UI/UX Design</small>
+                                                </div>
+                                            </td>
+                                            <td width="20%">
+                                                <div class="team-progress">
+                                                    <h4>65%</h4>
+                                                    <div class="progress-bar">
+                                                        <div class="indicator success" style="width: 65%">
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-main">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="team-info">
+                                                    <div class="team-img">
+                                                        <img src="" alt="">
+                                                    </div>
+                                                    <div class="team-details">
+                                                        <h4>Jessie Clarkson</h4>
+                                                        <small>HTML, JS, React JS</small>
+    
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="company-info">
+                                                    <h4>Agoda</h4>
+                                                    <small>House & Hotels</small>
+                                                </div>
+                                            </td>
+                                            <td width="20%">
+                                                <div class="team-progress">
+                                                    <h4>85%</h4>
+                                                    <div class="progress-bar">
+                                                        <div class="indicator success" style="width: 65%">
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-main">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="team-info">
+                                                    <div class="team-img">
+                                                        <img src="" alt="">
+                                                    </div>
+                                                    <div class="team-details">
+                                                        <h4>Juloa Simmons</h4>
+                                                        <small>HTML, JS, React JS</small>
+    
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="company-info">
+                                                    <h4>Interco</h4>
+                                                    <small>Web UI/UX Design</small>
+                                                </div>
+                                            </td>
+                                            <td width="20%">
+                                                <div class="team-progress">
+                                                    <h4>65%</h4>
+                                                    <div class="progress-bar">
+                                                        <div class="indicator success" style="width: 65%">
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-main">View</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                        </div>
+    
+                        <div class="card competitors">
+                            <div class="card-head">
+                                <h4>My Competiors</h4>
+                                <small>More than 400+ new members</small>
+                            </div>
+                            <div class="card-body">
+                                <div class="compete-info">
+                                    <div>
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="compete-details">
+                                        <h4>Cup & Green</h4>
+                                        <small>Study higway types</small>
+                                        <p>By: <a href="">Code resource</a></p>
+                                    </div>
+                                    <div class="compete-sales">
+                                        <h3>24,900</h3>
+                                        <span>Sales</span>
+                                    </div>    
+                                </div>
+                                <div class="compete-info">
+                                    <div>
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="compete-details">
+                                        <h4>Cup & Green</h4>
+                                        <small>Study higway types</small>
+                                        <p>By: <a href="">Code resource</a></p>
+                                    </div>
+                                    <div class="compete-sales">
+                                        <h3>24,900</h3>
+                                        <span>Sales</span>
+                                    </div>    
+                                </div>
+                                <div class="compete-info">
+                                    <div>
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="compete-details">
+                                        <h4>Cup & Green</h4>
+                                        <small>Study higway types</small>
+                                        <p>By: <a href="">Code resource</a></p>
+                                    </div>
+                                    <div class="compete-sales">
+                                        <h3>24,900</h3>
+                                        <span>Sales</span>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="taotaikhoan" class="tabcontent">
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">TẠO TÀI KHOẢN</div>
+                            <div class="content">
+                                <form action="#">
+                                    <div class="user-details">
+                                         <div class="input-group2  reponsive-form">
+                                            <div class="input-details row-group2">
+                                                <span class="details">Tài khoản mới</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mật khẩu</span>
+                                                <input type="password" placeholder="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="button">
+                                        <input type="submit" value="Xác Nhận">
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">Danh Sách</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                     <th>Mã</th>
+                                     <th>Tên</th>
+                                     <th>Tài khoản</th>
+                                     <th>Mật khẩu</th>
+                                     <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                      <tr>
+                                            <td data-label="Mã">1</td>
+                                            <td data-label="Tên">Dinesh</td>
+                                            <td data-label="Tài khoản">34</td>
+                                            <td data-label="Mật khẩu">50</td>
+                                            <td>
+                                                <i class='bx bxs-edit'></i>
+				                                <i class='bx bx-trash'></i>
+                                            </td>
+                                      </tr>
+                           
+                                      <tr>
+                                            <td data-label="Mã">2</td>
+                                            <td data-label="Tên">Kamal</td>
+                                            <td data-label="Tài khoản">23</td>
+                                            <td data-label="Mật khẩu">3270</td>
+                                            <td>
+                                                <i class='bx bxs-edit'></i>
+				                                <i class='bx bx-trash'></i>
+                                            </td>
+                                      </tr>
+                           
+                                      <tr>
+                                            <td data-label="Mã">3</td>
+                                            <td data-label="Tên">Neha</td>
+                                            <td data-label="Tài khoản">20</td>
+                                            <td data-label="Mật khẩu">123</td>
+                                            <td>
+                                                <i class='bx bxs-edit'></i>
+				                                <i class='bx bx-trash'></i>
+                                            </td>
+                                      </tr>
+                                   </tbody>
+                              </table>   
+                        </div>
+                     </div>
+                </div>
+                
+                <div id="danhsachtp" class="tabcontent">
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">DANH SÁCH TP</div>
+                            <div class="content">
+                                <form action="#">
+                                    <div class="user-details"> 
+                                         <div class="input-group2  reponsive-form">
+                                            <div class=" row-group2">
+                                                <input class="button-listcity-box" type="text" placeholder="Tìm kiếm TP" required>
+                                            </div>
+                                            <div class="row-group2">
+                                                <div class="button">
+                                                    <input type="submit" value="Xác Nhận">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </form>
+                            </div>
+                        </div> 
+                     </div>
+                     
+                </div>
+    
+                <div id="taomatp" class="tabcontent">
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">TẠO MÃ CHO THÀNH PHỐ</div>
+                            <div class="content">
+                                <form action="#">
+                                    <div class="user-details"> 
+                                            <div class="input-group2 reponsive-form">
+                                            <div class="input-details row-group2">
+                                                <span class="details">Thành phố</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mã Thành phố</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="button">
+                                        <input type="submit" value="Xác Nhận">
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">DANH SÁCH</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                     <th>Mã</th>
+                                     <th>Tên</th>
+                                     <th>Cấp quyền</th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                      <tr>
+                                            <td data-label="Mã">1</td>
+                                            <td data-label="Tên">D</td>
+                                            <td data-label="Cấp quyền">
+                                           <div class="button-change">
+                                               <input type="checkbox" name="" id="switch">
+                                                 <label for="switch">
+                                                 <div></div>
+                                                 </label>
+                                           </div>	 
+                                       </td>
+                                      </tr>
+                           
+                                      <tr>
+                                            <td data-label="Mã">2</td>
+                                            <td data-label="Tên">dshsk</td>
+                                            <td data-label="Cấp quyền">
+                                           <div class="button-change">
+                                               <input type="checkbox" name="" id="switch">
+                                                 <label for="switch">
+                                                 <div></div>
+                                                 </label>
+                                           </div>
+                                            </td>
+                                      </tr>
+                           
+                                      <tr>
+                                            <td data-label="Mã">3</td>
+                                            <td data-label="Tên">Neha</td>
+                                            <td data-label="Cấp quyền">
+                                           <div class="button-change">
+                                               <input type="checkbox" name="" id="switch">
+                                                 <label for="switch">
+                                                 <div></div>
+                                                 </label>
+                                           </div>
+                                            </td>
+                                      </tr>
+                                   </tbody>
+                                   
+                              </table>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="doimatkhau" class="tabcontent">
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">Đổi mật khẩu</div>
+                            <div class="content">
+                                <form action="#">
+                                    <div class="user-details"> 
+                                            <div class="input-group">
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mật khẩu cũ</span>
+                                                <input type="password" placeholder="" required>
+                                            </div>
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mât khẩu mới</span>
+                                                <input type="password" placeholder="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="button">
+                                        <input type="submit" value="Xác Nhận">
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
+                        </div>
+                </div>
+    
+                <div id="phantichdanso" class="tabcontent">
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">PHÂN TÍCH DÂN SỐ</div>
+                            <div class="all-buttonchart">
+                                <a href="#" class="active" onclick="openchart(event, 'chart-age')")>
+                                    <div class="buttonchart-icon">
+                                        <img src="./img/chartbar.png" alt="">
+                                        <p>Cột</p>
+                                    </div>   
+                                </a>
+                                <a href="#" onclick="openchart(event, 'chart-culture')">
+                                    <div class="buttonchart-icon">
+                                        <img src="./img/chartpie.png" alt="">
+                                        <p>Tròn</p>
+                                    </div>   
+                                </a>
+                                <a href="#" onclick="openchart(event, 'chart-line')">
+                                    <div class="buttonchart-icon">
+                                        <img src="./img/chartline (1).png" alt="">
+                                        <p>Đường</p>
+                                    </div>   
+                                </a>
+                                <a href="#" onclick="openchart(event, 'chart-combo')">
+                                    <div class="buttonchart-icon">
+                                        <img src="./img/chartkethop.png" alt="">
+                                        <p>kết hợp</p>
+                                    </div>   
+                                </a>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="formcontent">
+                        <div class="container">
+                            <form action="#">
+                                <div class="selectpeople">
+                                    <div class="select-country nameselect">
+                                        <p>Toàn quốc</p>
+                                        <select>
+                                            <option>- Chọn toàn quốc -</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-city nameselect">
+                                        <p>Tỉnh/ TP</p>
+                                        <select>
+                                            <option>- Chọn tỉnh/ TP -</option>
+                                            <option>Danh sách 01</option>
+                                            <option>Danh sách 02</option>
+                                            <option>Danh sách 03</option>
+                                            </select>
+                                    </div>
+                                    <div class="select-district nameselect">
+                                        <p>Quận/ huyện</p>
+                                        <select>
+                                            <option>- Chọn huyện -</option>
+                                            <option>Danh sách 02</option>
+                                            <option>Danh sách 03</option>
+                                            <option>Danh sách 03</option>
+                                            </select>
+                                    </div>
+                                    <div class="select-wards nameselect">
+                                        <p>Phường/ Xã</p>
+                                        <select>
+                                            <option>- Chọn xã/ phường -</option>
+                                            <option>Danh sách 02</option>
+                                            <option>Danh sách 03</option>
+                                            <option>Danh sách 03</option>
+                                            </select>
+                                    </div>
+                                    <div class="select-village nameselect">
+                                        <p>Thôn/ Xóm</p>
+                                        <select>
+                                            <option>- Chọn thôn/ xóm -</option>
+                                            <option>Danh sách 02</option>
+                                            <option>Danh sách 03</option>
+                                            <option>Danh sách 03</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="button">
+                                    <input type="submit" value="Xác Nhận">
+                                </div>
+                            </form>
+                            <div class="chartpeople">
+                                <div id="chart-age" class="chart-bar chart">
+                                    <div class="chartbar">
+                                        <canvas id="myChartbar1" width="200" height="200"></canvas>
+                                    </div> 
+                                </div>
+                                <div id="chart-culture" class="chart-pie chart">
+                                    <div class="chartpie">
+                                        <canvas id="myChartpie" width="200" height="200"></canvas>
+                                    </div>
+                                </div>
+                                <div id="chart-line" class="chart-line chart">
+                                    <canvas id="myChartline" width="200" height="200"></canvas>
+                                </div>
+                                <div id="chart-combo" class="chart-combo chart">
+                                    <canvas id="myChartcombo" width="200" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nhapthongtin" class="tabcontent">
+                    <div class="formcontent">
+                        <div class="container">
+                            <div class="title">THÔNG TIN CÁ NHÂN</div>
+                            <div class="content">
+                                <form action="#">
+                                    <div class="user-details">
+                                        <div class="input-group2 reponsive-form">
+                                            <div class="input-details row-group2">
+                                                 <span class="details ">Họ tên</span>
+                                                 <input type="text" class="" placeholder="" required>
+                                            </div>
+                                            <div class="input-detail row-group2 ">
+                                                 <span class="details">Giới tính</span>
+                                                <div class="radio-group">
+                                                     <label >
+                                                         <input type="radio" value="nam" name="gender">
+                                                         <p>Nam</p>
+                                                     </label>
+                                                     <label >
+                                                         <input type="radio" value="nu" name="gender">
+                                                         <p>Nữ</p>
+                                                         
+                                                     </label>
+                                                     <label >
+                                                         <input type="radio" value="khac" name="gender">
+                                                         <p>Khác</p>
+                                                     </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                          <div class="input-group3 reponsive-form">
+                                                <div class="input-details row-group3">
+                                                 <span class="details ">Ngày sinh</span>
+                                                 <input type="date" placeholder="" required min="1900-01-01" max="2021-12-31">
+                                                 
+                                                </div>
+                                                <div class="input-details row-group3">
+                                                 <span class="details ">CMND / CCCD</span>
+                                                 <input type="text" class="" placeholder="" required>
+                                                </div> 
+                                                <div class="input-details row-group3">
+                                                 <span class="details ">Quốc tịch</span>
+                                                 <input class="" type="text" placeholder="" required>
+                                                </div>
+                                         </div>
+                                         <div class="input-group2  reponsive-form">
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mã thành phố (thường trú)</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mã quận/huyện (thường trú)</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                        </div>
+                                        <div class="input-group2  reponsive-form">
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mã xã/phường (thường trú)</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                            <div class="input-details row-group2">
+                                                <span class="details">Mã thôn (thường trú)</span>
+                                                <input type="text" placeholder="" required>
+                                            </div>
+                                        </div>
+                                        <div class="input-group3 reponsive-form">
+                                            <div class="input-details row-group3">
+                                             <span class="details ">Công việc</span>
+                                             <input type="text" class="" placeholder="" required>
+                                             
+                                            </div>
+                                            <div class="input-details row-group3">
+                                             <span class="details ">Tôn giáo</span>
+                                             <input type="text" class="" placeholder="" required>
+                                            </div> 
+                                            <div class="input-details row-group3">
+                                             <span class="details ">Trình độ</span>
+                                             <input class="" type="text" placeholder="" required>
+                                            </div>
+                                     </div>
+                                     <div class="input-group3 reponsive-form">
+                                        <div class="input-details row-group3">
+                                         <span class="details ">Mã thành phố (tạm trú)</span>
+                                         <input type="text" class="" placeholder="" required>
+                                        </div>
+                                        <div class="input-details row-group3">
+                                         <span class="details ">Mã quận/huyện (tạm trú)</span>
+                                         <input type="text" class="" placeholder="" required>
+                                        </div> 
+                                        <div class="input-details row-group3">
+                                         <span class="details ">Mã xã/phường (tạm trú)</span>
+                                         <input class="" type="text" placeholder="" required>
+                                        </div>
+                                 </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="button">
+                                        <input type="submit" value="GỬI">
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        //Chart
+        // let options = {
+        //     chart: {
+        //         type: 'line',
+        //         height: "280px",
+        //         fontFamily: "Nunito",
+        //         toolbar: {
+        //             show: false,
+        //         }
+        //     },
+        //     stroke: {
+        //         curve: "smooth",
+        //         width: 8,
+        //         colors: ["#6E00FF"],
+        //     },
+        //     marker: {
+        //         size: 7,
+        //         colors: ["#6E00FF"],
+
+        //     },
+        //     grid: {
+        //         strokeDashArray: 10,
+        //     },
+        //     series: [{
+        //         name: 'engagement',
+        //         data: [5, 3, 10, 8, 29, 19, 22]
+        //     }],
+        //     xaxis: {
+        //         categories: ["Feb","Mar", "Apr", "May", "Jun","Jul","Aug"]
+        //     }
+        // }
+        // var chart = new ApexCharts(document.querySelector("#chart"), options);
+        // chart.render();
+
+        // Radial Bar Chart
+        // let optionsRadial = {
+        //     series: [60],
+        //     chart: {
+        //         height: 250,
+        //         type: 'radialBar',
+        //     },
+        //     plotOptions: {
+        //         radialBar: {
+        //             hollow: {
+        //                 size: '60%',
+        //             },
+        //             dataLabels: {
+        //                 name : {
+        //                     show: false,
+        //                 },
+        //                 value: {
+        //                     formatter: function(val) {
+        //                         return parseInt(val);
+        //                     },
+        //                     color: '#555',
+        //                     fontSize: '36px',
+        //                     fontWeight: 500,
+        //                 }
+        //             }
+        //         },
+        //     },
+        //     stroke: {
+        //         lineCap:"round",
+        //     },
+        //     fill: {
+        //         colors: ["#FFB100"],
+        //     }
+        // };
+        // let chartRadial = new ApexCharts(document.querySelector("#emailChart"), optionsRadial);
+        // chartRadial.render();
+
+        let menuItems = document.querySelectorAll(".sidebar .menu-item a");
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].addEventListener("click", () => {
+                for (let j = 0; j < menuItems.length; j++) {
+                    if (i == j) {
+                        menuItems[i].classList.add("active");
+                    } else {
+                        menuItems[j].classList.remove("active");
+                    }
+                }
+            })
+        }
+
+        //Home-tab
+        let tabcontent = document.getElementsByClassName("tabcontent");
+        for (let i = 1; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Open Sub-menu
+        function opensidebar(event, sub_menu) {
+            let tabcontent = document.getElementsByClassName("tabcontent");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(sub_menu).style.display = "block";
+        }
+
+        //chart-menu
+        let chart = document.getElementsByClassName("chart");
+        for (let i = 1; i < chart.length; i++) {
+            chart[i].style.display = "none";
+        }
+        function openchart(event, chart_menu) {
+            for (let i = 0; i < chart.length; i++) {
+                chart[i].style.display = "none";
+            }
+            document.getElementById(chart_menu).style.display = "flex";
+        }
+
+        let buttonCharts = document.querySelectorAll(".all-buttonchart a");
+        for (let i = 0; i < buttonCharts.length; i++) {
+            buttonCharts[i].addEventListener("click", () => {
+                for (let j = 0; j < buttonCharts.length; j++) {
+                    if (i == j) {
+                        buttonCharts[i].classList.add("active");
+                    } else {
+                        buttonCharts[j].classList.remove("active");
+                    }
+                }
+            })
+        }
+
+        
+// chart
+const ctx1 = document.getElementById('myChartbar1');
+const myChart1 = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                
+            ],
+            options: {
+                responsive: true,
+                plugins: {
+                legend: {
+                 position: 'top',
+                 },
+                title: {
+                    display: true,
+                    text: 'Chart.js Bar Chart'
+             }
+              }
+             },
+            borderWidth: 1
+        }]
+    },
+    options: {
+        
+        scales: {
+            x: {
+                reverse: true,
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+// chartpie
+const ctx3 = document.getElementById('myChartpie');
+const myChart = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            hoverOffset: 4
+        }]
+    },
+});
+
+// chart line
+const ctx4 = document.getElementById('myChartline');
+const myChart4 = new Chart(ctx4, {
+    type: 'line',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+    },
+});
+
+//Chart
+const ctx5 = document.getElementById('myChartcombo');
+const myChart5 = new Chart(ctx5, {
+    type: 'scatter',
+  data: {
+  labels: [
+    'January',
+    'February',
+    'March',
+    'April'
+  ],
+  datasets: [{
+    type: 'bar',
+    label: 'Bar Dataset',
+    data: [10, 20, 30, 40],
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'rgba(255, 99, 132, 0.2)'
+  }, {
+    type: 'line',
+    label: 'Line Dataset',
+    data: [5, 15, 30, 45],
+    fill: false,
+    borderColor: 'rgb(54, 162, 235)'
+  }]
+},
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+    </script>
+</body>
+</html>
